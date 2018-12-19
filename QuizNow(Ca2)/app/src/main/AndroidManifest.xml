@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.appone.jordan.quiznow">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_qn"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_qn_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AboutPageActivity"
+            android:noHistory="true"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.appone.jordan.quiznow.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".QuestionActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Your Profile"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+    </application>
+
+</manifest>

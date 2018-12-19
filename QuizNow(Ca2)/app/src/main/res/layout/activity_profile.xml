@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ProfileActivity"
+android:background="@color/colorPrimaryDark"
+android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="405dp">
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_marginTop="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_person"
+            android:contentDescription="@string/profile_text"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_text"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="21sp"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="400dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        app:cardBackgroundColor="@color/orange_Color"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score_text"
+                    android:textSize="20sp"
+                    android:textColor="@color/design_default_color_primary_dark"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score_number"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/joined_text"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/joined_date"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rank_text"
+                    android:textSize="20sp"
+                    android:textColor="@color/design_default_color_primary_dark"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rank_number"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
+</LinearLayout>

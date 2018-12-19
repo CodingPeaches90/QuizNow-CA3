@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">QuizNow</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="open_drawer">Open</string>
+    <string name="closed_drawer">Closed</string>
+    <string name="logout">Logout!</string>
+    <string name="question1">What does AI stand for?</string>
+    <!-- Strings for about page -->
+    <string name="quiznow_facebook">QuizNowFacebook</string>
+    <string name="quiznow_twitter">QuizNowTwitter</string>
+    <string name="quiznow_email">QuizNowEmail</string>
+    <string name="quiznow_website">QuizNowWebsite</string>
+    <string name="quiznow_youtube">QuizNowYoutube</string>
+    <string name="quiznow_playstore">QuizNowPlaystore</string>
+    <string name="quiznow_description">QuizNow! Is a Quiz application aimed at providing a platform to enable learners to further study their selected modules. What makes our application unique is that instead of selecting the correct answer in a quiz you simply say out loud the answer. This, in our opinion furthers one\s knowledge of the respective module.</string>
+    <string name="quiznow_version">v1.0.0</string>
+    <string name="quiznow_social">Social Media</string>
+    <string name="voice_button">Talk</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="profile_text">Jordan May</string>
+    <string name="score_text">Score</string>
+    <string name="score_number">398</string>
+    <string name="joined_text">Joined</string>
+    <string name="joined_date">2/11/18</string>
+    <string name="rank_text">Rank</string>
+    <string name="rank_number">23</string>
+
+    <string name="register_error">You need an instructor to Register!</string>
+    <string name="options_activity_name">Options</string>
+    <string name="ai_desc_title">Quiz : Artificial Intelligence</string>
+
+
+
+
+
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_register">Not Registered?</string>
+    <string name="login_login_text">Login</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+</resources>
