@@ -3,28 +3,21 @@ package com.appone.jordan.quiznow;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.michaldrabik.tapbarmenulib.TapBarMenu;
+import com.appone.jordan.quiznow.account.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Bind;
 
 import android.view.Menu;
 
@@ -181,8 +174,6 @@ public class HomeActivity extends AppCompatActivity
         qItems.add(new QuizItem("SM Quiz","Strategic Management",drawable.ic_action_quiz_name_sm));
         qItems.add(new QuizItem("AI Quiz","Artificial Intelligence",drawable.ic_action_quiz_name_ai));
         qItems.add(new QuizItem("AI Quiz","Artificial Intelligence",drawable.ic_action_quiz_name_ai));
-
-
     }
 
     private void initAdapter()

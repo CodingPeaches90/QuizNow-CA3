@@ -1,7 +1,9 @@
-package com.appone.jordan.quiznow;
+package com.appone.jordan.quiznow.account;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.appone.jordan.quiznow.R;
 
 public class LoginActivity extends AppCompatActivity {
 
