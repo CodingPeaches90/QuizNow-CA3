@@ -44,8 +44,14 @@
             android:name=".ProfileActivity"
             android:label="Your Profile"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".account.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".Account.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".AllQuestionViewActivity"
+            android:label="Answers for AI"
+            android:parentActivityName=".HomeActivity">
+        </activity>
     </application>
 
 </manifest>

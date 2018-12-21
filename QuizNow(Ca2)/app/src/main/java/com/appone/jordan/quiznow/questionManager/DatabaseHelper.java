@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         * */
         Question q1 = new Question("What does AI stand for?", "Artificial Intelligence", "Absolute Integrity", "Any Idea", "artificial intelligence");
         this.addQ(q1);
-        Question q2 = new Question("What does TSP stand for?", "Travelling Sales Man Problem", "Ive no idea", "Observes through sensors and acts upon them", "Travelling Sales Man Problem");
+        Question q2 = new Question("What does TSP stand for?", "Travelling Salesman Problem", "Ive no idea", "Observes through sensors and acts upon them", "Travelling Salesman Problem");
         this.addQ(q2);
         Question q3 = new Question("What year did Deep Blue win a Human?", "1920", "1997", "Any Idea", "1997");
         this.addQ(q3);

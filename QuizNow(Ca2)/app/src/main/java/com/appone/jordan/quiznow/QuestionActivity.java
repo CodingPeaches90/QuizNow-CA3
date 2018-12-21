@@ -44,7 +44,7 @@ public class QuestionActivity extends AppCompatActivity {
     TextView userTotalCorrect;
     TextView questionSize;
     Button resultClose;
-
+    Button openAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,8 @@ public class QuestionActivity extends AppCompatActivity {
         questionSize = dView.findViewById(R.id.quizTotalQuestions);
 
         resultClose = dView.findViewById(R.id.close_results);
+
+        openAnswers = dView.findViewById(R.id.open_answers);
 
         d.setContentView(dView);
 
@@ -90,6 +92,14 @@ public class QuestionActivity extends AppCompatActivity {
             finish();
 
         });
+
+        openAnswers.setOnClickListener(v -> {
+            d.dismiss();
+            startActivity(new Intent(this, AllQuestionViewActivity.class));
+            finish();
+        });
+
+
 
         butNext.setOnClickListener(v -> {
 
@@ -122,7 +132,7 @@ public class QuestionActivity extends AppCompatActivity {
                         .floating(true)
                         .show();
 
-                if(qid < 4){
+                if(qid < db.rowcount()){
                     Log.d("next question here", "Your score"+score);
 
                     curQ=quesList.get(qid);
@@ -144,7 +154,7 @@ public class QuestionActivity extends AppCompatActivity {
                         .floating(true)
                         .show();
 
-                if(qid < 4){
+                if(qid < db.rowcount()){
                     Log.d("next question here", "Your score"+score);
 
                     curQ=quesList.get(qid);

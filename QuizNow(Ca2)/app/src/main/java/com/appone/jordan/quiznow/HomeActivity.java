@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.appone.jordan.quiznow.account.LoginActivity;
+import com.appone.jordan.quiznow.Account.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -168,11 +168,6 @@ public class HomeActivity extends AppCompatActivity
                 These have to be hard coded -- got a strange error when calling from strings.xml
          */
         qItems = new ArrayList<>();
-        qItems.add(new QuizItem("AI Quiz","Artificial Intelligence",drawable.ic_action_quiz_name_ai));
-        qItems.add(new QuizItem("IoT Quiz","Internet of Things",drawable.ic_action_quiz_name_iot));
-        qItems.add(new QuizItem("SM Quiz","Strategic Management",drawable.ic_action_quiz_name_sm));
-        qItems.add(new QuizItem("SM Quiz","Strategic Management",drawable.ic_action_quiz_name_sm));
-        qItems.add(new QuizItem("AI Quiz","Artificial Intelligence",drawable.ic_action_quiz_name_ai));
         qItems.add(new QuizItem("AI Quiz","Artificial Intelligence",drawable.ic_action_quiz_name_ai));
     }
 

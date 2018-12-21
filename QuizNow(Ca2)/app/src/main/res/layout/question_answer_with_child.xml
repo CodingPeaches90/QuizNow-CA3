@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="1dp"
+    android:padding="16dp"
+    android:background="@color/colorPrimary">
+    
+    <RelativeLayout
+        android:id="@+id/buttonQA"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_expandable_up_orange">
+
+        </View>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/textView"
+        android:padding="8dp"
+        android:textSize="20sp"
+        android:text="hello"
+        android:id="@+id/textView"
+        android:textColor="@color/orange_Color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/textView" />
+    
+    <com.github.aakira.expandablelayout.ExpandableLinearLayout
+        android:id="@+id/expandableLayout"
+        android:layout_below="@+id/textView"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        >
+
+        <TextView
+            android:id="@+id/textViewChild"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/buttonQA"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="hello innner"
+            android:textColor="@color/orange_Color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/buttonQA" />
+
+    </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+</RelativeLayout>

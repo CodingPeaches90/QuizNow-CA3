@@ -1,4 +1,4 @@
-package com.appone.jordan.quiznow.account;
+package com.appone.jordan.quiznow.Account;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,8 +6,7 @@ import android.os.Bundle;
 import com.appone.jordan.quiznow.R;
 
 public class LoginActivity extends AppCompatActivity {
-
-    /* Test Commit */
+    /* */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
