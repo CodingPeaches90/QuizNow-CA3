@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.appone.jordan.quiznow">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_qn"
@@ -41,7 +43,7 @@
             android:name=".QuestionActivity"
             android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Account.ProfileActivity"
             android:label="Your Profile"
             android:parentActivityName=".HomeActivity" />
         <activity
@@ -51,7 +53,15 @@
             android:name=".AllQuestionViewActivity"
             android:label="Answers for AI"
             android:parentActivityName=".HomeActivity">
+
         </activity>
+        <activity android:name=".Account.RegisterActivity">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

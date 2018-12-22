@@ -4,11 +4,6 @@
     >
 
     <item
-        android:id="@+id/settings"
-        android:title="@string/logout"
-        app:showAsAction="never">
-    </item>
-    <item
         android:id="@+id/version"
         android:title="@string/quiznow_version"
         app:showAsAction="never">

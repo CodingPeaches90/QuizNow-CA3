@@ -7,14 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.appone.jordan.quiznow.Account.LoginActivity;
+import com.appone.jordan.quiznow.Account.ProfileActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,10 @@ public class HomeActivity extends AppCompatActivity
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
 
+    /* firebase vars*/
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
@@ -44,6 +50,18 @@ public class HomeActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_home);
+
+        /* init firebase vars */
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        /*Check if the user is logged in, if not send them to Login*/
+        if (firebaseUser == null)
+        {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+            return;
+        }
 
         rv = findViewById(id.rv);
         LinearLayoutManager lm = new LinearLayoutManager(this);
@@ -82,8 +100,10 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
+            Log.d("D", "Triggered" + item);
             return true;
         }
+
         return true;
     }
 
@@ -118,39 +138,31 @@ public class HomeActivity extends AppCompatActivity
         /*
                 Need to hardcode -- Strange compilation errors when calling from strings.xml!
          */
-        String[] osArray = { "Profile", "About" , "Settings", "Login", "Register"};
+        String[] osArray = { "Profile", "About" , "Settings", "Logout"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, osArray);
         mDrawerList.setAdapter(mAdapter);
 
-        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+        mDrawerList.setOnItemClickListener((parent, view, position, id) -> {
+            //Toast.makeText(HomeActivity.this, "Time for an upgrade!" + id, Toast.LENGTH_SHORT).show();
+            if (position == 0)
             {
-                //Toast.makeText(HomeActivity.this, "Time for an upgrade!" + id, Toast.LENGTH_SHORT).show();
-                if (position == 0)
-                {
-                    // If we are on pos 0 - > Profile
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                // If we are on pos 0 - > Profile
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
 
-                }else if (position == 1)
-                {
-                    // if we are on position 1 -> About
-                    startActivity(new Intent(getApplicationContext(), AboutPageActivity.class));
-                }else if (position == 2)
-                {
-                    // if 2 -> Settings
-                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                }else if (position == 3)
-                {
-                    // Login
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-
-                }else if (position == 4)
-                {
-                    // Register
-                    Toast.makeText(getApplicationContext(), string.register_error,
-                            Toast.LENGTH_LONG).show();
-                }
+            }else if (position == 1)
+            {
+                // if we are on position 1 -> About
+                startActivity(new Intent(getApplicationContext(), AboutPageActivity.class));
+            }else if (position == 2)
+            {
+                // if 2 -> Settings
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            }else if (position == 3)
+            {
+                // Logout
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
             }
         });
     }
@@ -159,7 +171,7 @@ public class HomeActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.setting_menu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     private void initData()
@@ -176,6 +188,7 @@ public class HomeActivity extends AppCompatActivity
         QuizItemAdapter a = new QuizItemAdapter(qItems);
         rv.setAdapter(a);
     }
+
 
 
 }
