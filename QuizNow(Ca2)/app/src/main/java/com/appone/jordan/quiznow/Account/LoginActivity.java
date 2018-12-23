@@ -21,6 +21,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.sdsmdg.tastytoast.TastyToast;
 
 public class LoginActivity extends AppCompatActivity {
+
+    /**
+     * In this activity we handle the user login request.
+     * Also we handle if the user wants to Register with QuizNow
+     */
+
+
     /* Variables Set Up */
 
     private EditText emailAddressField;
@@ -46,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-//        /* Check if the user is already logged in */
+        /* Check if the user is already logged in */
         authStateListener = firebaseAuth -> {
             if (user != null) {
 
@@ -54,9 +61,18 @@ public class LoginActivity extends AppCompatActivity {
                         .customView(R.layout.logged_in_toast_pass)
                         .floating(true)
                         .show();
+                // finish
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                finish();
             }
         };
+
+        /**
+         * This on click listener captures the inputted fields
+         * and sends them to our signInWith.. Method. This method
+         * takes in a email param and password param and makes a login request
+         * to Firebase's Backend.
+         */
 
         /*when user presses signin */
         loginBtn.setOnClickListener(v -> {
@@ -77,14 +93,16 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    /* Onn start of activity check if user is logged in*/
     @Override
     protected void onStart()
     {
         super.onStart();
-
-
     }
+
+    /**
+     *
+     * Go to the Register Activity if the user presses the textview.
+     */
 
     public void onClick(View view) {
         startActivity(new Intent(getApplicationContext(), RegisterActivity.class));

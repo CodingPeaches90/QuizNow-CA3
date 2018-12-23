@@ -13,6 +13,11 @@ import com.appone.jordan.quiznow.R;
 
 public class SplashActivity extends AppCompatActivity
 {
+
+    /**
+     * This activity is launched first when the app is launched. It displays
+     * our logo!
+     */
     private ImageView image;
 
     @Override

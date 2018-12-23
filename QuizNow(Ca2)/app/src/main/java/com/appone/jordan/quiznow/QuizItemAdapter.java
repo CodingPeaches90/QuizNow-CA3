@@ -14,6 +14,12 @@ import java.util.List;
 
 public class QuizItemAdapter extends RecyclerView.Adapter<QuizItemAdapter.QuizItemViewHolder>
 {
+    /**
+     * This adapter is used for our main activity
+     * which displays the quiz.
+     *
+     * Tutorial followed -> https://code.tutsplus.com/tutorials/getting-started-with-recyclerview-and-cardview-on-android--cms-23465
+     */
 
     public static class QuizItemViewHolder extends RecyclerView.ViewHolder {
         CardView cv;

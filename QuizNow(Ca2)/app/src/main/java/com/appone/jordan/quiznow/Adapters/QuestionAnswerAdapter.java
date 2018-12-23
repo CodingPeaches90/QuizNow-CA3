@@ -22,7 +22,13 @@ import com.github.aakira.expandablelayout.Utils;
 
 import java.util.List;
 
+/**
+ * This class contains several classes that handle our View for displaying the Quiz's
+ * questions. This code comes from this tutorial : https://www.youtube.com/watch?v=hVJpWSalzbo
+ */
 
+
+// This class is actually not used as we are using views with children ( Question -> Answer )
 class ViewWithoutChild extends RecyclerView.ViewHolder
 {
     // Variables

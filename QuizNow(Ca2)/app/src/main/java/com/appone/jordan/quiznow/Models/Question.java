@@ -1,4 +1,4 @@
-package com.appone.jordan.quiznow.questionManager;
+package com.appone.jordan.quiznow.Models;
 
 /*
 This class defines the model for our database

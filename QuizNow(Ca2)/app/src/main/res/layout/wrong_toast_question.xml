@@ -12,8 +12,8 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wrong"
-        android:textSize="20dp"
+        android:text="@string/wrong"
+        android:textSize="20sp"
         android:fontFamily="casual"
         android:textColor="#FFFFFF"/>
 

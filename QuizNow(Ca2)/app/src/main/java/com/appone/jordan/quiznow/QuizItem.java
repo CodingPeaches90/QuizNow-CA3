@@ -2,6 +2,9 @@ package com.appone.jordan.quiznow;
 
 public class QuizItem
 {
+    /**
+     * Quiz item object
+     */
     String name;
     String desc;
     int photoId;

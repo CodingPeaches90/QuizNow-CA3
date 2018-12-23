@@ -12,8 +12,8 @@
         android:id="@+id/loggedInError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Can't Log In"
-        android:textSize="20dp"
+        android:text="@string/can_t_log_in"
+        android:textSize="20sp"
         android:fontFamily="serif"
         android:textColor="#FFFFFF"/>
 

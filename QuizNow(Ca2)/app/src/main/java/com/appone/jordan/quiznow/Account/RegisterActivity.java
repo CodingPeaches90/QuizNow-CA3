@@ -23,10 +23,18 @@ import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    /**
+     * This Activity handles the Registration for the user.
+     * This class sets up a user account with Firebase's Auth services
+     * and queries Firebase's Real time database. In the Real Time Database
+     * a user node is created which contains: User Score, Username
+     */
+
     /*field variables*/
     private EditText emailInput;
     private EditText passwordInput;
     private EditText confirmInput;
+    private EditText usernameInput;
     private Button registerBtn;
 
     /*firebase variables*/
@@ -47,6 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordRegisterText);
         confirmInput = findViewById(R.id.confirmPasswordRegisterText);
         registerBtn = findViewById(R.id.registerBtn);
+        usernameInput = findViewById(R.id.usernameField);
+
 
         /*init firebase object*/
         firebaseAuth = FirebaseAuth.getInstance();
@@ -56,13 +66,23 @@ public class RegisterActivity extends AppCompatActivity {
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
             String confirmPassword = confirmInput.getText().toString().trim();
+            String username = usernameInput.getText().toString().trim();
 
-            setUpUserAccount(email, password, confirmPassword);
+            setUpUserAccount(email, password, confirmPassword, username);
         });
     }
 
-    /*make user*/
-    public void setUpUserAccount(String email, String password, String confirmPassword)
+    /**
+     * This method takes in the following params and creates a user account within Firebase, it also creates
+     * a user node within the Real time database.
+     *
+     * @param email
+     * @param password
+     * @param confirmPassword
+     * @param username
+     */
+
+    public void setUpUserAccount(String email, String password, String confirmPassword, String username)
     {
         // temp score for user
         int score = 0;
@@ -72,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful())
                 {
                     RegisteredUser rUser = new RegisteredUser(
-                            email, score
+                            username, score
                     );
                     // create node in real time database
                     FirebaseDatabase.getInstance().getReference("Users")
@@ -81,14 +101,14 @@ public class RegisterActivity extends AppCompatActivity {
                             .addOnCompleteListener(task1 -> {
                                 // if node complete re direct
                                 if (task1.isSuccessful()) {
-                                    TastyToast.makeText(getApplicationContext(), "Welcome !", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+                                    TastyToast.makeText(getApplicationContext(), getString(R.string.welcome_message), TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
 
                                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                 }
                             });
                 }else{
 
-                    TastyToast.makeText(getApplicationContext(), "Oh no !", TastyToast.LENGTH_LONG, TastyToast.ERROR);
+                    TastyToast.makeText(getApplicationContext(), getString(R.string.oh_no_message), TastyToast.LENGTH_LONG, TastyToast.ERROR);
 
 
                 }

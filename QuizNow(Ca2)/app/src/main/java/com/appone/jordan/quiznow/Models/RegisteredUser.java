@@ -4,23 +4,28 @@ import java.util.Date;
 
 public class RegisteredUser
 {
-    private String userEmail;
+    /**
+     * This class defines our register used for our real time database
+     */
+    private String username;
     private int userScore;
-    private Date userJoinedDate;
+    private String userJoinedDate;
 
-    public RegisteredUser(String userEmail, int userScore) {
-        this.userEmail = userEmail;
+    public RegisteredUser(String username, int userScore) {
+        this.username = username;
         this.userScore = userScore;
 
-        userJoinedDate = new Date();
+        userJoinedDate = "2018";
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public RegisteredUser(){}
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getUserScore() {
@@ -31,7 +36,7 @@ public class RegisteredUser
         this.userScore = userScore;
     }
 
-    public Date getUserJoinedDate() {
+    public String getUserJoinedDate() {
         return userJoinedDate;
     }
 

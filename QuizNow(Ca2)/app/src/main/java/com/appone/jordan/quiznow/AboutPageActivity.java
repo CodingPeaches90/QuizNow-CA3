@@ -17,6 +17,10 @@ import mehdi.sakout.aboutpage.Element;
 
 public class AboutPageActivity extends AppCompatActivity
 {
+    /**
+     * This Activity display's our About Page. It uses an external API
+     * call to make our about page!
+     */
 
     private String getDescription;
     private String getFacebook;
@@ -46,7 +50,7 @@ public class AboutPageActivity extends AppCompatActivity
         getSocial = getString(R.string.quiznow_social);
         getWebsite = getString(R.string.quiznow_website);
 
-
+        // About page object
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
                 .setImage(R.drawable.resized_logo)

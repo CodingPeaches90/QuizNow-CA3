@@ -1,4 +1,4 @@
-package com.appone.jordan.quiznow.questionManager;
+package com.appone.jordan.quiznow.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,10 +6,22 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.appone.jordan.quiznow.Models.Question;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
+    /**
+     * This class makes an connection to SQLite3 on the Device.
+     * This is used for our Quiz questions and answers and structures a database with
+     * one table in it.
+     *
+     * Tutorial followed : https://www.youtube.com/watch?v=EConlbYa-og
+     *
+     * Code is adapted to the project.
+     */
 
     private static final String dbName = "QuizNow";
     private SQLiteDatabase myDatabase;
@@ -50,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /* Construct our table now !*/
+    /* Questions could not be stored within String file. Strange crash happening! */
     public void makeQuestions()
     {
         /*
@@ -88,6 +101,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(questionAnswer3, q.getOptionC());
         myDatabase.insert(tbName, null, values);
     }
+
+    /**
+     * This method returns all questions within the table.
+     * This is then used by our adapter to fill the All questions and answers
+     * Activity.
+     *
+     * @return
+     */
 
     public List<Question> getAllQuestions() {
         List<Question> quesList = new ArrayList<>();

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizNow</string>
+
+
+    <string name="settings">Configuração</string>
+    <string name="help">Socorro</string>
+    <string name="open_drawer">Abrir</string>
+    <string name="closed_drawer">Fechadas</string>
+    <string name="logout">Sair!</string>
+    <string name="question1">o que significa inteligência artificial?</string>
+    <!-- Strings for about page -->
+    <string name="quiznow_facebook">QuizNowFacebook</string>
+    <string name="quiznow_twitter">QuizNowTwitter</string>
+    <string name="quiznow_email">QuizNowEmail</string>
+    <string name="quiznow_website">QuizNowWebsite</string>
+    <string name="quiznow_youtube">QuizNowYoutube</string>
+    <string name="quiznow_playstore">QuizNowPlaystore</string>
+    <string name="quiznow_description">QuizNow! É um aplicativo de teste destinado a fornecer uma plataforma para permitir que os alunos estudem ainda mais seus módulos selecionados. O que torna nosso aplicativo único é que, em vez de selecionar a resposta correta em um questionário, você simplesmente diz em voz alta a resposta. Isto, em nossa opinião, aumenta o conhecimento do respectivo módulo.</string>
+    <string name="quiznow_version">v1.0.0</string>
+    <string name="quiznow_social">mídia social</string>
+    <string name="voice_button">Conversa</string>
+    <string name="title_activity_settings">Configuração</string>
+    <string name="profile_text">Jordan May</string>
+    <string name="score_text">Ponto</string>
+    <string name="score_number">398</string>
+    <string name="joined_text">ingressou</string>
+    <string name="joined_date">2/11/18</string>
+    <string name="rank_text">Classificação</string>
+    <string name="rank_number">23</string>
+
+    <string name="register_error">Você precisa de um instrutor para se inscrever!</string>
+    <string name="options_activity_name">opções</string>
+    <string name="ai_desc_title">Questionário : Inteligência artificial</string>
+
+
+    <string name="login_username">o email</string>
+    <string name="login_password">senha</string>
+    <string name="login_register">Não registrado?</string>
+    <string name="login_login_text">Entrar</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">geral</string>
+
+    <string name="pref_title_social_recommendations">Ativar recomendações sociais</string>
+    <string name="pref_description_social_recommendations">Recomendações para as pessoas entrarem em contato com base no seu histórico de mensagens</string>
+
+    <string name="pref_title_display_name">Mostrar nome</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Adicione amigos a mensagens</string>
+    <string-array name="pref_example_list_titles">
+        <item>Sempre</item>
+        <item>Quando possivel</item>
+        <item>Nunca</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notificações</string>
+
+    <string name="pref_title_new_message_notifications">Novas notificações de mensagem</string>
+
+    <string name="pref_title_ringtone">toque</string>
+    <string name="pref_ringtone_silent">Silencioso</string>
+
+    <string name="pref_title_vibrate">Vibrar</string>
+    <string name="capture_image_event">Defina sua foto de perfil</string>
+    <string name="profile_picture_updated">Imagem de perfil atualizada!</string>
+    <string name="account_deleted">Conta excluída!</string>
+    <string name="date_temp">2018</string>
+    <string name="welcome_message">Bem vinda !</string>
+    <string name="oh_no_message">Ah não !</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="save">Salvou</string>
+    <string name="delete_account">Deletar conta</string>
+    <string name="next">Next</string>
+    <string name="correct">Próximo</string>
+    <string name="can_t_log_in">Não consigo fazer login</string>
+    <string name="welcome">Bem vinda</string>
+    <string name="hello_innner">hello innner</string>
+    <string name="hello">Olá</string>
+    <string name="imagequiz">imagequiz</string>
+    <string name="answers">respostas</string>
+    <string name="okay">Okay</string>
+    <string name="_0">0</string>
+    <string name="out_of">fora de</string>
+    <string name="result">Resultado</string>
+    <string name="wrong">Errado</string>
+
+</resources>

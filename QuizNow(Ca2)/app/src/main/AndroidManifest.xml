@@ -52,16 +52,14 @@
         <activity
             android:name=".AllQuestionViewActivity"
             android:label="Answers for AI"
-            android:parentActivityName=".HomeActivity">
-
-        </activity>
-        <activity android:name=".Account.RegisterActivity">
-
-        </activity>
+            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".Account.RegisterActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Account.EditProfileActivity"></activity>
     </application>
 
 </manifest>

@@ -28,6 +28,10 @@ import static com.appone.jordan.quiznow.R.*;
 
 public class HomeActivity extends AppCompatActivity
 {
+    /**
+     * This Activity is our Main activity. It contains a drawer layout for easy
+     * navigation. This activity also uses an adapter to display all quiz items.
+     */
     private List<QuizItem> qItems;
     private RecyclerView rv;
 

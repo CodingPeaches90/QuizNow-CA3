@@ -3,7 +3,6 @@ package com.appone.jordan.quiznow;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.os.Handler;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,19 +11,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.appone.jordan.quiznow.questionManager.DatabaseHelper;
-import com.appone.jordan.quiznow.questionManager.Question;
+import com.appone.jordan.quiznow.Database.DatabaseHelper;
+import com.appone.jordan.quiznow.Models.Question;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import com.appone.jordan.quiznow.R;
+
 import com.danimahardhika.cafebar.CafeBar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class QuestionActivity extends AppCompatActivity {
+
+    /**
+     * This is our Quiz Activity that displays each question for the user.
+     * The user can then use the speech recognition button to say the answer out
+     * loud. The API converts the speech to text and the backend verifies if the
+     * user got it correct or not using a custom Toast view.
+     *
+     * Once the quiz is complete, the users score is display and is then
+     * stored within Firebase's Real time database.
+     *
+     * Voice Recognition Tutorial -> https://www.androidhive.info/2014/07/android-speech-to-text-tutorial/
+     *
+     */
+
+    // Variables
 
     List<Question> quesList;
     Question curQ;
@@ -46,10 +62,22 @@ public class QuestionActivity extends AppCompatActivity {
     Button resultClose;
     Button openAnswers;
 
+    /*firebase*/
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+
+    private DatabaseReference databaseReference;
+    private FirebaseAuth.AuthStateListener authStateListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        /*listenner*/
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
 
         d = new Dialog(this, android.R.style.Theme_DeviceDefault_NoActionBar_Fullscreen);
 
@@ -121,6 +149,10 @@ public class QuestionActivity extends AppCompatActivity {
 
             String curqanswer = curQAns.toLowerCase();
 
+            // if the current answer is the correct one then we increment the score
+            // if we are at the end of the quiz then show our Dialog! and set the core to
+            // Firebase
+
             if(curqanswer.equals(aAnswer))
             {
                 score++;
@@ -145,10 +177,15 @@ public class QuestionActivity extends AppCompatActivity {
                     userTotalCorrect.setText(String.valueOf(score));
                     questionSize.setText(String.valueOf(quesList.size()));
 
+                    setScoreFirebase(score);
+
+
                     d.show();
+
                 }
 
             }else{
+                // If the current answer does not equal then move to next question
                 CafeBar.builder(QuestionActivity.this)
                         .customView(R.layout.wrong_toast_question)
                         .floating(true)
@@ -166,16 +203,32 @@ public class QuestionActivity extends AppCompatActivity {
                     userTotalCorrect.setText(String.valueOf(score));
                     questionSize.setText(String.valueOf(quesList.size()));
 
+                    setScoreFirebase(score);
+
+
                     d.show();
+
                 }
             }
         });
+
+    }
+    // Set the scoring to Firebase's Real time database under the current user node
+
+    private void setScoreFirebase(int score)
+    {
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        databaseReference.child("Users").child(userID).child("userScore").setValue(score);
+
     }
 
+    // Set our question
     private void setQuestion() {
         txtQuestion.setText(curQ.getQuestion());
         qid++;
     }
+    // start voice input
 
     private void startVoiceInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);

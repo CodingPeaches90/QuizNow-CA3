@@ -59,7 +59,8 @@ android:scrollbarAlwaysDrawVerticalTrack="true">
                     android:layout_marginTop="16dp"
                     android:singleLine="true"
                     android:hint="@string/login_password"
-                    android:inputType="text" />
+                    android:inputType="textPassword"
+                     />
             </android.support.design.widget.TextInputLayout>
 
             <TextView
